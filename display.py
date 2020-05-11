@@ -174,12 +174,14 @@ class Window(QWidget):
         if val == 'CE':
             self.ecuationText = ''
             self.ecuationLabel.clear()
-            self.inputLabel.clear()
+            self.inputLabel.setText('0')
             self.operatorLabel.clear()
         if val == 'C':
-            self.inputLabel.clear()
+            self.inputLabel.setText('0')
 
     def backspace(self):
         if len(self.inputLabel.text()) == 0:
             return
         self.inputLabel.setText(self.inputLabel.text()[:-1])
+        if self.inputLabel.text() == '':
+            self.inputLabel.setText('0')
